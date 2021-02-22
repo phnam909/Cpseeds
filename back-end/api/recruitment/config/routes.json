@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/recruitments",
+      "handler": "recruitment.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/recruitments/count",
+      "handler": "recruitment.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/recruitments/:id",
+      "handler": "recruitment.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/recruitments",
+      "handler": "recruitment.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/recruitments/:id",
+      "handler": "recruitment.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/recruitments/:id",
+      "handler": "recruitment.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

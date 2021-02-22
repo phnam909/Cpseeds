@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/r-and-d-strategies",
+      "handler": "r-and-d-strategy.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/r-and-d-strategies/count",
+      "handler": "r-and-d-strategy.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/r-and-d-strategies/:id",
+      "handler": "r-and-d-strategy.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/r-and-d-strategies",
+      "handler": "r-and-d-strategy.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/r-and-d-strategies/:id",
+      "handler": "r-and-d-strategy.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/r-and-d-strategies/:id",
+      "handler": "r-and-d-strategy.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

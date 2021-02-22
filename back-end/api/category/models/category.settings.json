@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "name": "Category",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Slut": {
+      "type": "uid",
+      "required": true,
+      "targetField": "Category"
+    },
+    "Category": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "products": {
+      "collection": "product"
+    },
+    "articles": {
+      "via": "category",
+      "collection": "article"
+    },
+    "product": {
+      "via": "category",
+      "collection": "product"
+    }
+  }
+}

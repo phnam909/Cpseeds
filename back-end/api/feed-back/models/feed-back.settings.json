@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feed_backs",
+  "info": {
+    "name": "FeedBack",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name_Customer": {
+      "type": "string",
+      "required": true
+    },
+    "Phone_number": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "FeedBack": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

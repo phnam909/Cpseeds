@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "Event",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Event_tittle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Event_content": {
+      "type": "richtext",
+      "required": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Event_tittle"
+    }
+  }
+}

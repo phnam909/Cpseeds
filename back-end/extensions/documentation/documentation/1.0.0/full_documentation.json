@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/22/2021 10:17:22 AM"
+    "x-generation-date": "02/22/2021 11:28:21 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1902,7 +1902,7 @@
         "parameters": []
       }
     },
-    "/categories/{id}": {
+    "/categories/{slug}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -1954,7 +1954,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "slug",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -1964,7 +1964,9 @@
             }
           }
         ]
-      },
+      }
+    },
+    "/categories/{id}": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -2413,7 +2415,7 @@
         "parameters": []
       }
     },
-    "/events/{id}": {
+    "/events/{slug}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -2465,7 +2467,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "slug",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -2475,7 +2477,9 @@
             }
           }
         ]
-      },
+      }
+    },
+    "/events/{id}": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -4496,7 +4500,7 @@
         "parameters": []
       }
     },
-    "/products/{id}": {
+    "/products/{Slug}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -4548,7 +4552,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "Slug",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -4558,7 +4562,9 @@
             }
           }
         ]
-      },
+      }
+    },
+    "/products/{id}": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -5012,7 +5018,7 @@
         "parameters": []
       }
     },
-    "/r-and-d-strategies/{id}": {
+    "/r-and-d-strategies/{slug}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -5068,7 +5074,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "slug",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -5078,7 +5084,9 @@
             }
           }
         ]
-      },
+      }
+    },
+    "/r-and-d-strategies/{id}": {
       "put": {
         "deprecated": false,
         "description": "Update a record",

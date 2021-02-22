@@ -38,8 +38,8 @@
       "required": true
     },
     "category": {
-      "model": "category",
-      "via": "product"
+      "via": "products",
+      "model": "category"
     }
   }
 }

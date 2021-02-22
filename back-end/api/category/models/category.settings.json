@@ -11,26 +11,18 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Slut": {
-      "type": "uid",
-      "required": true,
-      "targetField": "Category"
-    },
     "Category": {
       "type": "string",
       "required": true,
       "unique": true
     },
     "products": {
-      "collection": "product"
+      "collection": "product",
+      "via": "category"
     },
-    "articles": {
-      "via": "category",
-      "collection": "article"
-    },
-    "product": {
-      "via": "category",
-      "collection": "product"
+    "Slug": {
+      "type": "uid",
+      "targetField": "Category"
     }
   }
 }

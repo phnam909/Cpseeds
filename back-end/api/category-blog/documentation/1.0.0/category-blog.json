@@ -316,7 +316,7 @@
         "parameters": []
       }
     },
-    "/category-blogs/{id}": {
+    "/category-blogs/{slug}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -372,7 +372,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "slug",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -382,7 +382,9 @@
             }
           }
         ]
-      },
+      }
+    },
+    "/category-blogs/{id}": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -543,6 +545,46 @@
           "Slug": {
             "type": "uid"
           },
+          "articles": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "Title",
+                "Content",
+                "Cover"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "Title": {
+                  "type": "string"
+                },
+                "Content": {
+                  "type": "string"
+                },
+                "Cover": {
+                  "type": "string"
+                },
+                "Slug": {
+                  "type": "uid"
+                },
+                "category_blog": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -560,6 +602,12 @@
           },
           "Slug": {
             "type": "uid"
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

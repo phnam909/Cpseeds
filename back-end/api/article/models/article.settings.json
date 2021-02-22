@@ -35,8 +35,8 @@
       "type": "uid",
       "targetField": "Title"
     },
-    "category": {
-      "model": "category",
+    "category_blog": {
+      "model": "category-blog",
       "via": "articles"
     }
   }

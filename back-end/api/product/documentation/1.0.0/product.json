@@ -608,15 +608,11 @@
           "category": {
             "required": [
               "id",
-              "Slut",
               "Category"
             ],
             "properties": {
               "id": {
                 "type": "string"
-              },
-              "Slut": {
-                "type": "uid"
               },
               "Category": {
                 "type": "string"
@@ -627,17 +623,8 @@
                   "type": "string"
                 }
               },
-              "articles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "product": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "Slug": {
+                "type": "uid"
               },
               "published_at": {
                 "type": "string"

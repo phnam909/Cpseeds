@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/22/2021 11:28:21 AM"
+    "x-generation-date": "02/22/2021 12:25:00 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -356,7 +356,7 @@
         "parameters": []
       }
     },
-    "/articles/{id}": {
+    "/articles/{slug}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -408,7 +408,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "slug",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -418,7 +418,9 @@
             }
           }
         ]
-      },
+      }
+    },
+    "/articles/{id}": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -1383,7 +1385,7 @@
         "parameters": []
       }
     },
-    "/category-blogs/{id}": {
+    "/category-blogs/{slug}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -1439,7 +1441,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "slug",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -1449,7 +1451,9 @@
             }
           }
         ]
-      },
+      }
+    },
+    "/category-blogs/{id}": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -7927,35 +7931,23 @@
           "Slug": {
             "type": "uid"
           },
-          "category": {
+          "category_blog": {
             "required": [
               "id",
-              "Slut",
-              "Category"
+              "category_blog",
+              "Slug"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "Slut": {
-                "type": "uid"
-              },
-              "Category": {
+              "category_blog": {
                 "type": "string"
               },
-              "products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "Slug": {
+                "type": "uid"
               },
               "articles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "product": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -7993,7 +7985,7 @@
           "Slug": {
             "type": "uid"
           },
-          "category": {
+          "category_blog": {
             "type": "string"
           },
           "published_at": {
@@ -8122,94 +8114,6 @@
           "Slug": {
             "type": "uid"
           },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "NewCategory-blog": {
-        "required": [
-          "category_blog",
-          "Slug"
-        ],
-        "properties": {
-          "category_blog": {
-            "type": "string"
-          },
-          "Slug": {
-            "type": "uid"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "updated_by": {
-            "type": "string"
-          }
-        }
-      },
-      "Category": {
-        "required": [
-          "id",
-          "Slut",
-          "Category"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "Slut": {
-            "type": "uid"
-          },
-          "Category": {
-            "type": "string"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "Name_vi",
-                "Slug"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Name_vi": {
-                  "type": "string"
-                },
-                "Description_vi": {
-                  "type": "string"
-                },
-                "Product_img": {
-                  "type": "string"
-                },
-                "Price": {
-                  "type": "integer"
-                },
-                "Slug": {
-                  "type": "uid"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "articles": {
             "type": "array",
             "items": {
@@ -8235,7 +8139,7 @@
                 "Slug": {
                   "type": "uid"
                 },
-                "category": {
+                "category_blog": {
                   "type": "string"
                 },
                 "published_at": {
@@ -8250,7 +8154,55 @@
               }
             }
           },
-          "product": {
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewCategory-blog": {
+        "required": [
+          "category_blog",
+          "Slug"
+        ],
+        "properties": {
+          "category_blog": {
+            "type": "string"
+          },
+          "Slug": {
+            "type": "uid"
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Category": {
+        "required": [
+          "id",
+          "Category"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Category": {
+            "type": "string"
+          },
+          "products": {
             "type": "array",
             "items": {
               "required": [
@@ -8292,6 +8244,9 @@
               }
             }
           },
+          "Slug": {
+            "type": "uid"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -8300,13 +8255,9 @@
       },
       "NewCategory": {
         "required": [
-          "Slut",
           "Category"
         ],
         "properties": {
-          "Slut": {
-            "type": "uid"
-          },
           "Category": {
             "type": "string"
           },
@@ -8316,17 +8267,8 @@
               "type": "string"
             }
           },
-          "articles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "product": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "Slug": {
+            "type": "uid"
           },
           "published_at": {
             "type": "string",
@@ -8863,15 +8805,11 @@
           "category": {
             "required": [
               "id",
-              "Slut",
               "Category"
             ],
             "properties": {
               "id": {
                 "type": "string"
-              },
-              "Slut": {
-                "type": "uid"
               },
               "Category": {
                 "type": "string"
@@ -8882,17 +8820,8 @@
                   "type": "string"
                 }
               },
-              "articles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "product": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "Slug": {
+                "type": "uid"
               },
               "published_at": {
                 "type": "string"

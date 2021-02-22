@@ -311,7 +311,7 @@
         "parameters": []
       }
     },
-    "/articles/{id}": {
+    "/articles/{slug}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -363,7 +363,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "slug",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -373,7 +373,9 @@
             }
           }
         ]
-      },
+      }
+    },
+    "/articles/{id}": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -601,35 +603,23 @@
           "Slug": {
             "type": "uid"
           },
-          "category": {
+          "category_blog": {
             "required": [
               "id",
-              "Slut",
-              "Category"
+              "category_blog",
+              "Slug"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "Slut": {
-                "type": "uid"
-              },
-              "Category": {
+              "category_blog": {
                 "type": "string"
               },
-              "products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "Slug": {
+                "type": "uid"
               },
               "articles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "product": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -667,7 +657,7 @@
           "Slug": {
             "type": "uid"
           },
-          "category": {
+          "category_blog": {
             "type": "string"
           },
           "published_at": {
